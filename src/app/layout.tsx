@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${poppins.className} antialiased scroll-smooth`}>
         <div className="flex min-h-screen flex-col">
           <Header />
           {children}
