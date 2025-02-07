@@ -48,19 +48,15 @@ const navigationItems: NavigationSection[] = [
     items: [
       {
         title: 'Aftermarket Parts',
-        href: '/services/aftermarket',
+        href: '/services#aftermarket-parts',
       },
       {
         title: 'Product Development',
-        href: '/services/development',
+        href: '/services#product-development',
       },
       {
-        title: 'Chassis Components',
-        href: '/services/chassis',
-      },
-      {
-        title: 'Steel & Rubber Components',
-        href: '/services/components',
+        title: 'miller automotive parts Advantage',
+        href: '/services#millerautomotiveparts-advantage',
       },
     ],
   },

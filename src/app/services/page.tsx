@@ -36,7 +36,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
         {/* Aftermarket Parts Section */}
-        <section className="mb-16">
+        <section className="mb-16" id="aftermarket-parts">
           <h1 className="text-3xl font-bold text-miller-red mb-6">
             Aftermarket Parts
           </h1>
@@ -48,7 +48,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Product Development Section */}
-        <section className="mb-16">
+        <section className="mb-16" id="product-development">
           <h1 className="text-3xl font-bold text-miller-red mb-6">
             Product Development
           </h1>
@@ -60,7 +60,7 @@ export default function ServicesPage() {
         </section>
 
         {/* millerautomotiveparts Advantage Section */}
-        <section>
+        <section id="millerautomotiveparts-advantage">
           <h1 className="text-3xl font-bold text-miller-red mb-6">
             millerautomotiveparts Advantage
           </h1>
