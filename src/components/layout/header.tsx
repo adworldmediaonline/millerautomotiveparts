@@ -92,20 +92,27 @@ export function Header() {
     <>
       {/* Contact Info Bar */}
       <div className="w-full bg-miller-red text-white py-2">
-        <div className="container flex justify-end gap-8">
+        <div className="container flex flex-col sm:flex-row justify-end gap-2 sm:gap-8">
           <a
             href="tel:650-464-5636"
-            className="flex items-center gap-2 hover:text-white/90"
+            className="flex items-center justify-center sm:justify-start gap-2 hover:text-white/90 text-sm sm:text-base"
           >
-            <Phone className="h-4 w-4" />
-            <span>Phone: 650-464-5636</span>
+            <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="hidden xs:inline">Phone:</span>
+            <span>650-464-5636</span>
           </a>
           <a
             href="mailto:info@millerautomotiveparts.com"
-            className="flex items-center gap-2 hover:text-white/90"
+            className="flex items-center justify-center sm:justify-start gap-2 hover:text-white/90 text-sm sm:text-base"
           >
-            <Mail className="h-4 w-4" />
-            <span>Mail: info@millerautomotiveparts.com</span>
+            <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="hidden xs:inline">Mail:</span>
+            <span className="hidden sm:inline">
+              info@millerautomotiveparts.com
+            </span>
+            <span className="inline sm:hidden">
+              info@millerautomotiveparts.com
+            </span>
           </a>
         </div>
       </div>
