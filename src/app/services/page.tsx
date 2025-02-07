@@ -1,4 +1,5 @@
 import { Cog, Boxes } from 'lucide-react';
+import { Metadata } from 'next';
 
 const services = [
   {
@@ -24,6 +25,11 @@ const advantages = [
   'Known name in the industry',
   'Many in-stock components',
 ];
+
+export const metadata: Metadata = {
+  title: 'Miller Automotive Parts - Services',
+  description: 'Miller Automotive Parts - Services',
+};
 
 export default function ServicesPage() {
   return (

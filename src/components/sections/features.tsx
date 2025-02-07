@@ -1,4 +1,5 @@
 import { User2, Settings2, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 const features = [
   {
@@ -6,8 +7,9 @@ const features = [
     icon: User2,
     description:
       'millerautomotiveparts specializes in Chassis Components which includes Steering, Suspension and Driveline components.',
-    link: '/about',
+    link: '/company',
   },
+
   {
     title: 'OUR ADVANTAGE',
     icon: Settings2,
@@ -18,7 +20,7 @@ const features = [
       'Shorter lead time',
       'Close tolerances',
     ],
-    link: '/advantages',
+    link: '/services',
   },
   {
     title: 'CONTACT US',
@@ -65,22 +67,22 @@ export function Features() {
                   <p>{feature.contactInfo.phone}</p>
                   <p>
                     Email:{' '}
-                    <a
+                    <Link
                       href={`mailto:${feature.contactInfo.email}`}
                       className="underline hover:text-white"
                     >
                       {feature.contactInfo.email}
-                    </a>
+                    </Link>
                   </p>
                 </div>
               )}
 
-              <a
+              <Link
                 href={feature.link}
                 className="mt-4 rounded-md bg-gray-700/20 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700/30 transition-colors"
               >
                 READ MORE
-              </a>
+              </Link>
             </div>
           ))}
         </div>
