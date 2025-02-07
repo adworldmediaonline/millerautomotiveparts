@@ -226,12 +226,14 @@ export function Header() {
                               key={subItem.title}
                               className="flex flex-col gap-1"
                             >
-                              <Link
-                                href={subItem.href}
-                                className="text-sm font-medium hover:text-primary"
-                              >
-                                {subItem.title}
-                              </Link>
+                              <SheetTrigger asChild>
+                                <Link
+                                  href={subItem.href}
+                                  className="text-sm font-medium hover:text-primary"
+                                >
+                                  {subItem.title}
+                                </Link>
+                              </SheetTrigger>
                               {subItem.description && (
                                 <p className="text-xs text-muted-foreground">
                                   {subItem.description}
@@ -255,12 +257,14 @@ export function Header() {
                         </div>
                       </>
                     ) : (
-                      <Link
-                        href={item.href!}
-                        className="text-lg font-medium hover:text-primary"
-                      >
-                        {item.title}
-                      </Link>
+                      <SheetTrigger asChild>
+                        <Link
+                          href={item.href!}
+                          className="text-lg font-medium hover:text-primary"
+                        >
+                          {item.title}
+                        </Link>
+                      </SheetTrigger>
                     )}
                   </div>
                 ))}

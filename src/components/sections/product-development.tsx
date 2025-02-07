@@ -123,136 +123,187 @@ export default function ProductDevelopment() {
         </motion.div>
 
         {/* Desktop Timeline (hidden on mobile) */}
-        <div className="hidden lg:block relative" ref={containerRef}>
-          {/* Background line (non-animated) */}
-          <div
-            className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-accent/20"
-            style={{
-              boxShadow: '0 0 10px rgba(0,0,0,0.02)',
-            }}
-          />
-
-          {/* Animated progress line */}
-          <motion.div
-            className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 origin-top"
-            style={{
-              background:
-                'linear-gradient(180deg, #1C2B5E 0%, rgba(28, 43, 94, 0.3) 100%)',
-              scaleY: scaleProgress,
-              boxShadow: '0 0 10px rgba(0,0,0,0.05)',
-            }}
-          />
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            className="space-y-32"
-          >
-            {developmentSteps.map((step, index) => (
+        <div
+          className="hidden lg:block relative max-w-6xl mx-auto"
+          ref={containerRef}
+        >
+          <div className="grid grid-cols-2 gap-12">
+            {/* Left Column */}
+            <div className="relative">
+              <div className="absolute right-0 top-0 bottom-0 w-0.5 bg-accent/20" />
               <motion.div
-                key={step.title}
-                variants={itemVariants}
-                className={`relative flex ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                } items-center gap-8`}
+                className="absolute right-0 top-0 bottom-0 w-0.5 origin-top"
+                style={{
+                  background:
+                    'linear-gradient(180deg, #1C2B5E 0%, rgba(28, 43, 94, 0.3) 100%)',
+                  scaleY: scaleProgress,
+                }}
+              />
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-50px' }}
+                className="space-y-16 pr-12"
               >
-                {/* Icon Circle */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                {developmentSteps.slice(0, 2).map(step => (
                   <motion.div
-                    className="bg-gradient-to-br from-miller-navy to-miller-navy/90 p-4 rounded-full border-4 border-white shadow-lg"
-                    whileHover={{
-                      scale: 1.1,
-                      transition: {
-                        type: 'spring',
-                        stiffness: 300,
-                        damping: 15,
-                      },
-                    }}
+                    key={step.title}
+                    variants={itemVariants}
+                    className="relative"
                   >
-                    <step.icon className="h-8 w-8 text-white" />
-                  </motion.div>
-                </div>
-
-                {/* Content */}
-                <div
-                  className={`w-1/2 ${
-                    index % 2 === 0 ? 'text-right pr-16' : 'pl-16'
-                  }`}
-                >
-                  <motion.div
-                    className={`bg-white rounded-2xl p-6 shadow-lg relative
-                      before:absolute before:top-1/2 before:-translate-y-1/2
-                      before:w-4 before:h-4 before:rotate-45 before:bg-white
-                      ${
-                        index % 2 === 0
-                          ? 'before:right-0 before:translate-x-1/2'
-                          : 'before:left-0 before:-translate-x-1/2'
-                      }
-                      hover:shadow-xl transition-all duration-300 border border-accent/10
-                    `}
-                    whileHover={{
-                      scale: 1.02,
-                      y: -4,
-                      transition: {
-                        type: 'spring',
-                        stiffness: 300,
-                        damping: 15,
-                      },
-                    }}
-                  >
-                    <div className="relative z-10">
-                      <h3 className="text-2xl font-bold text-miller-navy mb-6 flex items-center gap-3">
-                        <span
-                          className={`inline-block w-8 h-0.5 bg-miller-red ${
-                            index % 2 === 0 ? 'order-2' : 'order-1'
-                          }`}
-                        />
-                        <span
-                          className={index % 2 === 0 ? 'order-1' : 'order-2'}
-                        >
-                          {step.title}
-                        </span>
-                      </h3>
-                      <ul className="space-y-4">
-                        {step.items.map((item, itemIndex) => (
-                          <motion.li
-                            key={itemIndex}
-                            className={`flex items-start gap-3 group ${
-                              index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
-                            }`}
-                            initial={{
-                              opacity: 0,
-                              x: index % 2 === 0 ? 20 : -20,
-                            }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                              duration: 0.5,
-                              delay: itemIndex * 0.1,
-                            }}
-                          >
-                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-miller-red flex-shrink-0 transition-transform duration-300 group-hover:scale-150" />
-                            <span
-                              className={`text-muted-foreground group-hover:text-foreground transition-colors duration-300 ${
-                                index % 2 === 0 ? 'text-right' : 'text-left'
-                              }`}
-                            >
-                              {item}
-                            </span>
-                          </motion.li>
-                        ))}
-                      </ul>
+                    {/* Icon Circle */}
+                    <div className="absolute right-0 top-3 translate-x-1/2 z-10">
+                      <motion.div
+                        className="bg-gradient-to-br from-miller-navy to-miller-navy/90 p-2.5 rounded-full border-4 border-white shadow-lg"
+                        whileHover={{
+                          scale: 1.1,
+                          transition: {
+                            type: 'spring',
+                            stiffness: 300,
+                            damping: 15,
+                          },
+                        }}
+                      >
+                        <step.icon className="h-5 w-5 text-white" />
+                      </motion.div>
                     </div>
-                  </motion.div>
-                </div>
 
-                {/* Empty space for the other side */}
-                <div className="w-1/2" />
+                    {/* Content */}
+                    <motion.div
+                      className="bg-white rounded-xl p-4 shadow-lg relative
+                        before:absolute before:right-0 before:top-5 before:translate-x-2
+                        before:w-2.5 before:h-2.5 before:rotate-45 before:bg-white
+                        hover:shadow-xl transition-all duration-300 border border-accent/10"
+                      whileHover={{
+                        scale: 1.02,
+                        x: -4,
+                        transition: {
+                          type: 'spring',
+                          stiffness: 300,
+                          damping: 15,
+                        },
+                      }}
+                    >
+                      <div className="relative z-10">
+                        <h3 className="text-xl font-bold text-miller-navy mb-3 flex items-center justify-end gap-2">
+                          <span>{step.title}</span>
+                          <span className="inline-block w-6 h-0.5 bg-miller-red" />
+                        </h3>
+                        <ul className="space-y-2">
+                          {step.items.map((item, itemIndex) => (
+                            <motion.li
+                              key={itemIndex}
+                              className="group"
+                              initial={{ opacity: 0, x: 20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.5,
+                                delay: itemIndex * 0.1,
+                              }}
+                            >
+                              <span className="block text-sm text-right text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                                {item}
+                              </span>
+                            </motion.li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </div>
+
+            {/* Right Column */}
+            <div className="relative">
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-accent/20" />
+              <motion.div
+                className="absolute left-0 top-0 bottom-0 w-0.5 origin-top"
+                style={{
+                  background:
+                    'linear-gradient(180deg, #1C2B5E 0%, rgba(28, 43, 94, 0.3) 100%)',
+                  scaleY: scaleProgress,
+                }}
+              />
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-50px' }}
+                className="space-y-16 pl-12"
+              >
+                {developmentSteps.slice(2).map(step => (
+                  <motion.div
+                    key={step.title}
+                    variants={itemVariants}
+                    className="relative"
+                  >
+                    {/* Icon Circle */}
+                    <div className="absolute left-0 top-3 -translate-x-1/2 z-10">
+                      <motion.div
+                        className="bg-gradient-to-br from-miller-navy to-miller-navy/90 p-2.5 rounded-full border-4 border-white shadow-lg"
+                        whileHover={{
+                          scale: 1.1,
+                          transition: {
+                            type: 'spring',
+                            stiffness: 300,
+                            damping: 15,
+                          },
+                        }}
+                      >
+                        <step.icon className="h-5 w-5 text-white" />
+                      </motion.div>
+                    </div>
+
+                    {/* Content */}
+                    <motion.div
+                      className="bg-white rounded-xl p-4 shadow-lg relative
+                        before:absolute before:left-0 before:top-5 before:-translate-x-2
+                        before:w-2.5 before:h-2.5 before:rotate-45 before:bg-white
+                        hover:shadow-xl transition-all duration-300 border border-accent/10"
+                      whileHover={{
+                        scale: 1.02,
+                        x: 4,
+                        transition: {
+                          type: 'spring',
+                          stiffness: 300,
+                          damping: 15,
+                        },
+                      }}
+                    >
+                      <div className="relative z-10">
+                        <h3 className="text-xl font-bold text-miller-navy mb-3 flex items-center gap-2">
+                          <span className="inline-block w-6 h-0.5 bg-miller-red" />
+                          <span>{step.title}</span>
+                        </h3>
+                        <ul className="space-y-2">
+                          {step.items.map((item, itemIndex) => (
+                            <motion.li
+                              key={itemIndex}
+                              className="group"
+                              initial={{ opacity: 0, x: -20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.5,
+                                delay: itemIndex * 0.1,
+                              }}
+                            >
+                              <span className="block text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                                {item}
+                              </span>
+                            </motion.li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Mobile Layout */}
@@ -283,11 +334,11 @@ export default function ProductDevelopment() {
               </div>
 
               <div className="p-6">
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {step.items.map((item, itemIndex) => (
                     <motion.li
                       key={itemIndex}
-                      className="flex items-start gap-3 group"
+                      className="group"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
@@ -296,8 +347,7 @@ export default function ProductDevelopment() {
                         delay: itemIndex * 0.1,
                       }}
                     >
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-miller-red flex-shrink-0 transition-transform duration-300 group-hover:scale-150" />
-                      <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      <span className="block text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                         {item}
                       </span>
                     </motion.li>
