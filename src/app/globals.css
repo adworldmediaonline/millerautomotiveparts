@@ -2,20 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Miller Red */
+    --primary: 0 100% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Navy Blue */
+    --secondary: 222 47% 31%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 222 47% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 47% 31%;
+
+    /* Chart colors using brand palette */
+    --chart-1: 0 100% 40%; /* Miller Red */
+    --chart-2: 222 47% 31%; /* Navy Blue */
+    --chart-3: 220 14% 80%; /* Light Gray */
+    --chart-4: 0 70% 50%; /* Light Red */
+    --chart-5: 222 47% 41%; /* Light Navy */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Miller Red - slightly adjusted for dark mode */
+    --primary: 0 90% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Navy Blue - adjusted for dark mode */
+    --secondary: 222 47% 41%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 222 47% 21%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    /* Chart colors for dark mode */
+    --chart-1: 0 90% 50%; /* Brighter Red */
+    --chart-2: 222 47% 61%; /* Lighter Navy */
+    --chart-3: 220 14% 40%; /* Darker Gray */
+    --chart-4: 0 70% 60%; /* Brighter Light Red */
+    --chart-5: 222 47% 71%; /* Very Light Navy */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
