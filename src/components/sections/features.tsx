@@ -1,4 +1,4 @@
-import { User2, Settings2, Mail } from 'lucide-react';
+import { User2, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 const features = [
@@ -8,19 +8,6 @@ const features = [
     description:
       'millerautomotiveparts specializes in Chassis Components which includes Steering, Suspension and Driveline components.',
     link: '/company',
-  },
-
-  {
-    title: 'OUR ADVANTAGE',
-    icon: Settings2,
-    description:
-      'Top quality at a reasonable price, shorter lead time, and close tolerances.',
-    bulletPoints: [
-      'Top quality at a reasonable price',
-      'Shorter lead time',
-      'Close tolerances',
-    ],
-    link: '/services',
   },
   {
     title: 'CONTACT US',
@@ -40,7 +27,7 @@ export function Features() {
   return (
     <section className="w-full bg-miller-red py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map(feature => (
             <div
               key={feature.title}
@@ -51,14 +38,6 @@ export function Features() {
               </div>
               <h2 className="mb-4 text-2xl font-bold">{feature.title}</h2>
               <p className="mb-4 text-white/90">{feature.description}</p>
-
-              {feature.bulletPoints && (
-                <ul className="mb-4 space-y-2 text-white/90">
-                  {feature.bulletPoints.map(point => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              )}
 
               {feature.contactInfo && (
                 <div className="space-y-2 text-white/90">

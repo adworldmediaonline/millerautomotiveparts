@@ -47,16 +47,16 @@ const navigationItems: NavigationSection[] = [
     title: 'Services',
     items: [
       {
-        title: 'Aftermarket Parts',
-        href: '/services#aftermarket-parts',
+        title: 'Stocked Inventory',
+        href: '/services#stocked-inventory',
       },
       {
         title: 'Product Development',
         href: '/services#product-development',
       },
       {
-        title: 'miller automotive parts Advantage',
-        href: '/services#millerautomotiveparts-advantage',
+        title: 'Process',
+        href: '/services#process',
       },
     ],
   },
