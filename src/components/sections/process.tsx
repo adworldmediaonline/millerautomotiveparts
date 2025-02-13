@@ -13,7 +13,7 @@ import {
 const procedures = [
   {
     icon: FileCheck,
-    title: 'Submit Design',
+    title: 'Drawing or Sample',
     text: 'You will supply us with a sample or a drawing',
   },
   {

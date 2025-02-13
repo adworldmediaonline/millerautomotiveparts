@@ -17,6 +17,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import Image from 'next/image';
+import { products } from '@/lib/data';
 
 interface BaseItem {
   title: string;
@@ -62,24 +63,10 @@ const navigationItems: NavigationSection[] = [
   },
   {
     title: 'Products',
-    items: [
-      {
-        title: 'Chassis Components',
-        href: '/products/chassis',
-      },
-      {
-        title: 'Steel & Rubber Components',
-        href: '/products/components',
-      },
-      {
-        title: 'Steering Systems',
-        href: '/products/steering',
-      },
-      {
-        title: 'Suspension Parts',
-        href: '/products/suspension',
-      },
-    ],
+    items: products.map(product => ({
+      title: product.name,
+      href: `/products/${product.id}`,
+    })),
   },
   {
     title: 'Quality Control',
