@@ -127,7 +127,7 @@ export function Header() {
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[300px] gap-3 p-4 md:w-[300px] md:grid-cols-1 lg:w-[300px]">
+                        <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                           {item.items.map(subItem => (
                             <li key={subItem.title} className="row-span-3">
                               <NavigationMenuLink asChild>
