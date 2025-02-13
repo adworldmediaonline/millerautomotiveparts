@@ -14,9 +14,9 @@ const features = [
     icon: Mail,
     description: 'Get in touch with us for any inquiries or support.',
     contactInfo: {
-      address: 'P.O. Box 696',
-      city: 'Pleasanton, CA - 94566',
-      phone: 'U.S.A. Tel: 650-464-5636',
+      address: '4001 134th St NE',
+      city: 'Marysville WA 98271',
+      phone: '(425) 501 6908',
       email: 'info@millerautomotiveparts.com',
     },
     link: '/contact',
@@ -43,7 +43,7 @@ export function Features() {
                 <div className="space-y-2 text-white/90">
                   <p>{feature.contactInfo.address}</p>
                   <p>{feature.contactInfo.city}</p>
-                  <p>{feature.contactInfo.phone}</p>
+                  <p>Tel: {feature.contactInfo.phone}</p>
                   <p>
                     Email:{' '}
                     <Link
