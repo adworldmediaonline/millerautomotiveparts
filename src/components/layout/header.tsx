@@ -48,10 +48,6 @@ const navigationItems: NavigationSection[] = [
     title: 'Services',
     items: [
       {
-        title: 'Stocked Inventory',
-        href: '/services#stocked-inventory',
-      },
-      {
         title: 'Product Development',
         href: '/services#product-development',
       },
