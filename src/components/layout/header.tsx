@@ -82,7 +82,7 @@ export function Header() {
           >
             <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
             <span className="hidden xs:inline">Phone:</span>
-            <span>650-464-5636</span>
+            <span>(425) 501 6908</span>
           </a>
           <a
             href="mailto:info@millerautomotiveparts.com"

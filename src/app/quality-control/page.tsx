@@ -9,12 +9,36 @@ import {
   Wrench,
   CheckCircle,
 } from 'lucide-react';
+import { CloudinaryImage } from '@/components/ui/cloudinary-image';
 
 export const metadata: Metadata = {
   title: 'Quality Control - Miller Automotive Parts',
   description:
     'Learn about our comprehensive quality control measures ensuring vehicle safety, performance, and durability.',
 };
+
+const factoryImages = [
+  {
+    src: 'factory_image_2_ogow1q',
+    alt: 'Factory Image 1',
+  },
+  {
+    src: 'factory_image_1_iqtjb1',
+    alt: 'Factory Image 2',
+  },
+  {
+    src: 'factory_image_4_h8idnq',
+    alt: 'Factory Image 3',
+  },
+  {
+    src: 'factory_image_3_ymrofp',
+    alt: 'Factory Image 4',
+  },
+  {
+    src: 'factory_image_5_rdu1ui',
+    alt: 'Factory Image 5',
+  },
+];
 
 const qualityControlSections = [
   {
@@ -98,67 +122,186 @@ const qualityControlSections = [
 export default function QualityControlPage() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-miller-navy mb-4">
-            Quality Control
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Quality control is critical to ensuring vehicle safety, performance,
-            and durability. Here&apos;s a breakdown of key quality control
-            measures we take:
-          </p>
+      {/* Hero Section */}
+      <section className="relative h-[400px] md:h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <CloudinaryImage
+            src={factoryImages[0].src}
+            alt={factoryImages[0].alt}
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         </div>
+        <div className="relative h-full container mx-auto px-4 flex items-center">
+          <div className="max-w-2xl text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Quality Control Excellence
+            </h1>
+            <p className="text-lg md:text-xl text-white/90">
+              Our commitment to quality control ensures vehicle safety,
+              performance, and durability through comprehensive testing and
+              validation processes.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Quality Control Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {qualityControlSections.map(section => (
-            <div
-              key={section.id}
-              className="group bg-white rounded-2xl shadow-lg border border-accent/20 p-6 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-miller-red/10 via-miller-red/5 to-transparent group-hover:from-miller-red/20 transition-all duration-300">
-                  <section.icon className="w-6 h-6 text-miller-red" />
-                </div>
-                <div className="space-y-3">
-                  <h2 className="text-xl font-bold text-miller-navy">
-                    {section.title}
-                  </h2>
-                  <ul className="space-y-2">
-                    {section.items.map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="flex items-start gap-2 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
-                      >
-                        <span className="mt-2 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-miller-red/60 group-hover:bg-miller-red transition-colors duration-300" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+      <div className="container mx-auto px-4 py-16">
+        {/* Main Content Section */}
+        <div className="space-y-24">
+          {/* First Section with Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="grid gap-6">
+                {qualityControlSections.slice(0, 2).map(section => (
+                  <div
+                    key={section.id}
+                    className="group bg-white rounded-2xl shadow-lg border border-accent/20 p-6 hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-miller-red/10 via-miller-red/5 to-transparent group-hover:from-miller-red/20 transition-all duration-300">
+                        <section.icon className="w-6 h-6 text-miller-red" />
+                      </div>
+                      <div className="space-y-3">
+                        <h2 className="text-xl font-bold text-miller-navy">
+                          {section.title}
+                        </h2>
+                        <ul className="space-y-2">
+                          {section.items.map((item, itemIndex) => (
+                            <li
+                              key={itemIndex}
+                              className="flex items-start gap-2 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+                            >
+                              <span className="mt-2 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-miller-red/60 group-hover:bg-miller-red transition-colors duration-300" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <CloudinaryImage
+                src={factoryImages[1].src}
+                alt={factoryImages[1].alt}
+                width={800}
+                height={600}
+                className="w-full aspect-4/3 object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Second Section with Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl lg:order-2">
+              <CloudinaryImage
+                src={factoryImages[2].src}
+                alt={factoryImages[2].alt}
+                width={800}
+                height={600}
+                className="w-full aspect-4/3 object-cover"
+              />
+            </div>
+            <div className="space-y-8 lg:order-1">
+              <div className="grid gap-6">
+                {qualityControlSections.slice(2, 4).map(section => (
+                  <div
+                    key={section.id}
+                    className="group bg-white rounded-2xl shadow-lg border border-accent/20 p-6 hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-miller-red/10 via-miller-red/5 to-transparent group-hover:from-miller-red/20 transition-all duration-300">
+                        <section.icon className="w-6 h-6 text-miller-red" />
+                      </div>
+                      <div className="space-y-3">
+                        <h2 className="text-xl font-bold text-miller-navy">
+                          {section.title}
+                        </h2>
+                        <ul className="space-y-2">
+                          {section.items.map((item, itemIndex) => (
+                            <li
+                              key={itemIndex}
+                              className="flex items-start gap-2 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+                            >
+                              <span className="mt-2 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-miller-red/60 group-hover:bg-miller-red transition-colors duration-300" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Material Quality Assurance Section */}
+          <div className="relative">
+            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+              <CloudinaryImage
+                src={factoryImages[3].src}
+                alt="Factory Quality Control"
+                width={1920}
+                height={1080}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50" />
+            </div>
+            <div className="relative max-w-3xl mx-auto rounded-2xl p-8 md:p-12">
+              <div className="prose prose-lg max-w-none text-white">
+                <h2 className="text-3xl font-bold text-white mb-6">
+                  Material Quality Assurance
+                </h2>
+                <div className="space-y-4">
+                  <p className="text-white/90">
+                    We only use 4340 Chromoly Steel for all Forgings like Tie
+                    Rod Ends, Joints, Ball Joints, Inner C, Pitman Arms etc.
+                  </p>
+                  <p className="text-white/90">
+                    We can submit metallurgy report along with machining report
+                    for the production batch.
+                  </p>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Additional Information */}
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-accent/20 p-8">
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-2xl font-bold text-miller-navy mb-6">
-              Material Quality Assurance
-            </h2>
-            <div className="space-y-4">
-              <p className="text-muted-foreground">
-                We only use 4340 Chromoly Steel for all Forgings like Tie Rod
-                Ends, Joints, Ball Joints, Inner C, Pitman Arms etc.
-              </p>
-              <p className="text-muted-foreground">
-                We can supply matullergy test reports along with machine reports
-                for all components.
-              </p>
-            </div>
+          {/* Additional Quality Control Measures */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {qualityControlSections.slice(4).map(section => (
+              <div
+                key={section.id}
+                className="group bg-white rounded-2xl shadow-lg border border-accent/20 p-6 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-miller-red/10 via-miller-red/5 to-transparent group-hover:from-miller-red/20 transition-all duration-300">
+                    <section.icon className="w-6 h-6 text-miller-red" />
+                  </div>
+                  <div className="space-y-3">
+                    <h2 className="text-xl font-bold text-miller-navy">
+                      {section.title}
+                    </h2>
+                    <ul className="space-y-2">
+                      {section.items.map((item, itemIndex) => (
+                        <li
+                          key={itemIndex}
+                          className="flex items-start gap-2 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+                        >
+                          <span className="mt-2 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-miller-red/60 group-hover:bg-miller-red transition-colors duration-300" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ export default function CompanyPage() {
               Our History
             </h2>
             <p className="text-lg text-muted-foreground">
-              The company was founded in 2008 with a vision to make quality
+              The company was founded in 2008 with a vision to supply quality
               products at more affordable prices.
             </p>
           </div>
