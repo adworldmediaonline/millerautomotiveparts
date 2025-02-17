@@ -21,29 +21,34 @@ export default function Home() {
               <Popover key={product.id}>
                 <PopoverTrigger asChild>
                   <button className="group flex items-center gap-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
-                    <span className="text-white text-sm font-medium text-left group-hover:text-miller-red transition-colors">
+                    <span className="text-dark text-sm font-medium text-left group-hover:text-miller-red transition-colors">
                       {product.name}
                     </span>
-                    <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-miller-red transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-dark group-hover:text-miller-red transition-colors" />
                   </button>
                 </PopoverTrigger>
                 <PopoverContent
                   side="right"
-                  className="w-[280px] p-2 bg-white/95 backdrop-blur-sm"
+                  className="w-[280px] p-3 bg-black/90 backdrop-blur-sm rounded-xl border-none"
                 >
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-3">
                     {product.images.slice(0, 4).map(image => (
                       <div
                         key={image.src}
-                        className="relative aspect-square rounded-lg overflow-hidden"
+                        className="group relative bg-white/5 rounded-lg p-2 aspect-square flex items-center justify-center"
                       >
-                        <CloudinaryImage
-                          src={image.src}
-                          alt={image.alt}
-                          width={200}
-                          height={200}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                        />
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <CloudinaryImage
+                            src={image.src}
+                            alt={image.alt}
+                            width={200}
+                            height={200}
+                            className="w-auto h-auto max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
+                            crop="pad"
+                            quality={85}
+                            effects={[{ background: 'transparent' }]}
+                          />
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -59,29 +64,34 @@ export default function Home() {
               <Popover key={product.id}>
                 <PopoverTrigger asChild>
                   <button className="group flex items-center gap-2 hover:bg-white/5 p-2 rounded-lg transition-colors">
-                    <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-miller-red transition-colors rotate-180" />
-                    <span className="text-white text-sm font-medium text-left group-hover:text-miller-red transition-colors">
+                    <ChevronRight className="w-4 h-4 text-dark group-hover:text-miller-red transition-colors rotate-180" />
+                    <span className="text-dark text-sm font-medium text-left group-hover:text-miller-red transition-colors">
                       {product.name}
                     </span>
                   </button>
                 </PopoverTrigger>
                 <PopoverContent
                   side="left"
-                  className="w-[280px] p-2 bg-white/95 backdrop-blur-sm"
+                  className="w-[280px] p-3 bg-black/90 backdrop-blur-sm rounded-xl border-none"
                 >
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-3">
                     {product.images.slice(0, 4).map(image => (
                       <div
                         key={image.src}
-                        className="relative aspect-square rounded-lg overflow-hidden"
+                        className="group relative bg-white/5 rounded-lg p-2 aspect-square flex items-center justify-center"
                       >
-                        <CloudinaryImage
-                          src={image.src}
-                          alt={image.alt}
-                          width={200}
-                          height={200}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                        />
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <CloudinaryImage
+                            src={image.src}
+                            alt={image.alt}
+                            width={200}
+                            height={200}
+                            className="w-auto h-auto max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
+                            crop="pad"
+                            quality={85}
+                            effects={[{ background: 'transparent' }]}
+                          />
+                        </div>
                       </div>
                     ))}
                   </div>
