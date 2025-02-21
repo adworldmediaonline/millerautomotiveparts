@@ -23,117 +23,28 @@ export function ProductSlider() {
         }}
         className="w-full h-full bg-white"
       >
-        {products.map(product => {
-          const displayImages = product.images.slice(0, 5);
-          return (
-            <SwiperSlide key={product.id} className="relative bg-white">
-              <div className="absolute inset-0">
-                {/* Grid Container */}
-                <div className="relative w-full h-full grid grid-cols-5 grid-rows-5 gap-2 p-4">
-                  {/* Top Image */}
-                  {displayImages[1] && (
-                    <div className="col-start-3 col-span-1 row-start-1 row-span-2 flex items-end justify-center">
-                      <div className="relative w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] flex items-center justify-center">
-                        <CloudinaryImage
-                          src={displayImages[1].src}
-                          alt={displayImages[1].alt}
-                          width={300}
-                          height={300}
-                          format="png"
-                          removeBackground={true}
-                          quality={100}
-                          crop="pad"
-                          effects={[{ background: 'transparent' }]}
-                          className="w-auto h-auto max-w-full max-h-full object-contain drop-shadow-xl transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Left Image */}
-                  {displayImages[2] && (
-                    <div className="col-start-1 col-span-2 row-start-2 row-span-2 flex items-center justify-end">
-                      <div className="relative w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] flex items-center justify-center">
-                        <CloudinaryImage
-                          src={displayImages[2].src}
-                          alt={displayImages[2].alt}
-                          width={300}
-                          height={300}
-                          format="png"
-                          removeBackground={true}
-                          quality={100}
-                          crop="pad"
-                          effects={[{ background: 'transparent' }]}
-                          className="w-auto h-auto max-w-full max-h-full object-contain drop-shadow-xl transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Center Image */}
-                  {displayImages[0] && (
-                    <div className="col-start-3 col-span-1 row-start-2 row-span-2 flex items-center justify-center">
-                      <div className="relative w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex items-center justify-center">
-                        <CloudinaryImage
-                          src={displayImages[0].src}
-                          alt={displayImages[0].alt}
-                          width={400}
-                          height={400}
-                          format="png"
-                          removeBackground={true}
-                          quality={100}
-                          crop="pad"
-                          effects={[{ background: 'transparent' }]}
-                          className="w-auto h-auto max-w-full max-h-full object-contain drop-shadow-xl transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Right Image */}
-                  {displayImages[3] && (
-                    <div className="col-start-4 col-span-2 row-start-2 row-span-2 flex items-center justify-start">
-                      <div className="relative w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] flex items-center justify-center">
-                        <CloudinaryImage
-                          src={displayImages[3].src}
-                          alt={displayImages[3].alt}
-                          width={300}
-                          height={300}
-                          format="png"
-                          removeBackground={true}
-                          quality={100}
-                          crop="pad"
-                          effects={[{ background: 'transparent' }]}
-                          className="w-auto h-auto max-w-full max-h-full object-contain drop-shadow-xl transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Bottom Image */}
-                  {displayImages[4] && (
-                    <div className="col-start-3 col-span-1 row-start-4 row-span-2 flex items-start justify-center">
-                      <div className="relative w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] flex items-center justify-center">
-                        <CloudinaryImage
-                          src={displayImages[4].src}
-                          alt={displayImages[4].alt}
-                          width={300}
-                          height={300}
-                          format="png"
-                          removeBackground={true}
-                          quality={100}
-                          crop="pad"
-                          effects={[{ background: 'transparent' }]}
-                          className="w-auto h-auto max-w-full max-h-full object-contain drop-shadow-xl transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                    </div>
-                  )}
+        {products.map(product => (
+          <SwiperSlide key={product.id} className="relative bg-white">
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              {product.mainImage && (
+                <div className="relative w-[500px] h-[300px] md:w-[500px] md:h-[300px] flex items-center justify-center">
+                  <CloudinaryImage
+                    src={product.mainImage}
+                    alt={product.name}
+                    width={837}
+                    height={527}
+                    format="webp"
+                    // removeBackground={true}
+                    quality={100}
+                    crop="pad"
+                    effects={[{ background: 'transparent' }]}
+                    className="w-auto h-auto max-w-full max-h-full object-contain  transition-all duration-500 hover:scale-110"
+                  />
                 </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
+              )}
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

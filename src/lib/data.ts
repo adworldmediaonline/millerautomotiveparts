@@ -1,6 +1,7 @@
 interface Product {
   id: string;
   name: string;
+  mainImage?: string;
   images: {
     src: string;
     alt: string;
@@ -11,6 +12,7 @@ export const products: Product[] = [
   {
     id: 'tie-rod-ends',
     name: 'Tie Rod Ends',
+    mainImage: 'THE_ROD_ENDS_ivhycm',
     images: [
       {
         src: 'DSC_4693_jfldfm',
@@ -41,6 +43,7 @@ export const products: Product[] = [
   {
     id: 'billet-t6061',
     name: 'Billet T 6061',
+    mainImage: 'BILLET_-_T6061_theybh',
     images: [
       {
         src: 'wheel_spacers_gtqcya',
@@ -79,6 +82,7 @@ export const products: Product[] = [
   {
     id: 'billet-steel',
     name: 'Billet Steel',
+    mainImage: 'BILLET_-_STEEL_mxlncn',
     images: [
       {
         src: 'IMG_4584_rjvstk',
@@ -113,6 +117,7 @@ export const products: Product[] = [
   {
     id: 'forgings',
     name: 'Forgings',
+    mainImage: 'FORGING_ujn38o',
     images: [
       {
         src: 'IMG_0511_vguam4',
@@ -147,6 +152,7 @@ export const products: Product[] = [
   {
     id: 'castings',
     name: 'Castings',
+    mainImage: 'CASTINGS_h4ebt9',
     images: [
       {
         src: 'DIFF_COVER_trfkyz',
@@ -177,6 +183,7 @@ export const products: Product[] = [
   {
     id: 'joints-and-bushings',
     name: 'Joints and Bushings',
+    mainImage: 'JOINTS_BUSHINGS_erplhz',
     images: [
       {
         src: 'IMG_4622_ceawfg',
@@ -211,6 +218,7 @@ export const products: Product[] = [
   {
     id: 'ball-joints',
     name: 'Ball Joints',
+    mainImage: 'BALL_JOINTS_btotay',
     images: [
       {
         src: 'IMG_4682_xracoh',
@@ -229,6 +237,7 @@ export const products: Product[] = [
   {
     id: 'hardware',
     name: 'Hardware',
+    mainImage: 'HARDWARE_cx0hva',
     images: [
       {
         src: 'IMG_4591_zpqruy',
@@ -259,6 +268,7 @@ export const products: Product[] = [
   {
     id: 'dom-and-bars',
     name: 'DOM and Bars',
+    mainImage: 'DOM_BARS_qywkol',
     images: [
       {
         src: 'dom_tube_sr8mvd',
@@ -277,6 +287,7 @@ export const products: Product[] = [
   {
     id: 'tools',
     name: 'Tools',
+    mainImage: 'TOOLS_ohojyp',
     images: [
       {
         src: 'IMG_0486_hvdjnh',
