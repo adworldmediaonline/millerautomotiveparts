@@ -24,18 +24,18 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
       </div>
 
       {/* Gallery Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
         {images.map((image, index) => (
           <div
             key={image.src}
-            className="group flex items-center justify-center bg-white border border-accent/20 hover:border-miller-red/20 transition-all duration-300 rounded-lg p-2 min-h-[150px]"
+            className="group flex items-center justify-center bg-white transition-all duration-300 rounded-lg p-3 min-h-[220px]"
           >
             <CloudinaryImage
               src={image.src}
               alt={image.alt}
-              width={150}
-              height={150}
-              className="w-auto h-auto max-w-full max-h-[140px] object-contain transition-all duration-500 group-hover:scale-110"
+              width={260}
+              height={260}
+              className="w-auto h-auto max-w-full max-h-[200px] object-contain transition-all duration-500 group-hover:scale-110"
               priority={index === 0}
               crop="pad"
               quality={85}

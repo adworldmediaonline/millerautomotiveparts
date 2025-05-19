@@ -108,10 +108,10 @@ export const products: Product[] = [
         src: 'DSC_4000_up3ei0',
         alt: 'Billet Steel Component - 6',
       },
-      {
-        src: 'DSC_7772_endvuw',
-        alt: 'Billet Steel Component - 7',
-      },
+      // {
+      //   src: 'DSC_7772_endvuw',
+      //   alt: 'Billet Steel Component - 7',
+      // },
     ],
   },
   {
