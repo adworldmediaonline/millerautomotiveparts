@@ -17,17 +17,17 @@ export function ProductSlider() {
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
         className="w-full h-full bg-white"
       >
         {products.map(product => (
           <SwiperSlide key={product.id} className="relative bg-white">
             <div className="absolute inset-0 flex items-center justify-center p-8">
               {product.mainImage && (
-                <div className="relative w-[500px] h-[300px] md:w-[500px] md:h-[300px] flex items-center justify-center">
+                <div className="relative w-[600px] h-[400px] md:w-[600px] md:h-[400px] flex items-center justify-center">
                   <CloudinaryImage
                     src={product.mainImage}
                     alt={product.name}

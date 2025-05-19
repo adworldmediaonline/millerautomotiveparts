@@ -40,20 +40,12 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               crop="pad"
               quality={85}
               effects={[{ background: 'transparent' }]}
+              // removeBackground={true}
             />
             {/* Subtle Hover Effect */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
           </div>
         ))}
-      </div>
-
-      {/* Product Description */}
-      <div className="mt-8 max-w-2xl mx-auto">
-        <p className="text-muted-foreground text-center">
-          Explore our premium collection of {productName.toLowerCase()},
-          showcasing exceptional quality and precision engineering in every
-          detail.
-        </p>
       </div>
     </div>
   );
